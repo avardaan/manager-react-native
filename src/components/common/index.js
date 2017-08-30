@@ -4,6 +4,7 @@ export * from './CardSection';
 export * from './Header';
 export * from './Input';
 export * from './Spinner';
+export * from './Confirm';
 
 // when we use export star syntax, it essentially imports and exports in the same line
 // export start means export everything in that file

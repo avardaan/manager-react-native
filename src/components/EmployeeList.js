@@ -51,7 +51,6 @@ const mapStateToProps = (state) => {
   const employees = _.map(state.employees, (val, uid) => {
     return { ...val, uid }
   })
-  console.log('list of employees is ', employees)
 
   // return an object that has the list of emplyoees
   // { [ {employee1}, {employee2}, {etc} ] }

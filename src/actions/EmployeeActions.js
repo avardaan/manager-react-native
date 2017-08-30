@@ -63,3 +63,21 @@ export const employeesFetch = () => {
     })
   }
 }
+
+export const employeeSave = ({ name, phone, shift, uid }) => {
+  const currentUser = firebase.auth().currentUser;
+  return (dispatch) => {
+    firebase.database().ref(`users/${currentUser.uid}/employees/${uid}`)
+    .set({ name, phone, shift })
+      .then(() => Actions.pop({ type: 'reset' }))
+    }
+  }
+
+export const employeeDelete = ({ uid }) => {
+  const currentUser = firebase.auth().currentUser
+  return (dispatch) => {
+    firebase.database().ref(`users/${currentUser.uid}/employees/${uid}`)
+    .remove()
+    .then(() => Actions.pop({ type: 'reset' }))
+  }
+}

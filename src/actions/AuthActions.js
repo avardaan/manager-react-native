@@ -46,7 +46,6 @@ export const loginUser = ({email, password}) => {
 }
 
 const loginUserFail = (dispatch) => {
-  console.log('loginUserFail was run')
   dispatch({ type: LOGIN_USER_FAIL })
 }
 
